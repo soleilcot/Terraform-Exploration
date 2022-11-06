@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "tf_state" {
-    bucket = "tf-learning"
+    bucket = "tf-learning-and-practice"
 
     # Don't allow the bucket to be deleted via tf
     lifecycle {
