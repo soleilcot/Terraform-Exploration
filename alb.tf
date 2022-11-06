@@ -59,3 +59,19 @@ resource "aws_alb_target_group" "asg" {
     path = "/"
   }
 }
+
+resource "aws_lb_listener_rule" "asg" {
+  listener_arn = aws_lb_listener.http.arn
+  
+  action {
+    type = "forward"
+    target_group_arn = aws_alb_target_group.asg.arn
+  }
+
+  condition {
+    path_pattern {
+        values = [ "*" ]
+    }
+  }
+
+}
