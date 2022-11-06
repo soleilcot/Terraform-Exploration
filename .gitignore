@@ -1,6 +1,6 @@
-.terraform
-*.tfstate
-*.tfstate.backup
-.DS_Store
-AWSCLIV2.pkg
-.terraform.tfstate.lock.info 
+*/.terraform
+*/*.tfstate
+*/*.tfstate.backup
+*/.DS_Store
+*/AWSCLIV2.pkg
+*/.terraform.tfstate.lock.info 
