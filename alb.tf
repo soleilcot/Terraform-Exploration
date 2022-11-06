@@ -23,7 +23,7 @@ resource "aws_lb_listener" "http" {
 
 resource "aws_security_group" "alb" {
     name = "terraform-example-alb-sg"
-    description = "Allow inbound HTTP traffic"
+    description = "Allow inbound HTTP traffic and all outbound traffic"
 
     # Allow inbound HTTP requests (Port 80)
     ingress {
