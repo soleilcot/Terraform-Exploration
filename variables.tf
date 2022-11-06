@@ -4,7 +4,7 @@ variable "server_port" {
     default = 8080
 }
 
-output "public_ip" {
-    value = aws_instance.example.public_ip
-    description = "The public IP of the example EC2 instance"
-}
+#output "public_ip" {
+#    value = aws_instance.example.public_ip
+#    description = "The public IP of the example EC2 instance"
+#}
