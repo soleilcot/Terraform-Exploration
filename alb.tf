@@ -43,3 +43,15 @@ resource "aws_security_group" "alb" {
     }
   
 }
+
+resource "aws_alb_target_group" "asg" {
+  name = "tf-lb-asg-tg"
+  port = var.server_port
+  protocol = "HTTP"
+  vpc_id = data.aws_vpc.default.id
+
+  health_check {
+    matcher = "200"
+    path = "/"
+  }
+}
