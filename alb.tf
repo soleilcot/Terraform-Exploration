@@ -22,7 +22,7 @@ resource "aws_lb_listener" "http" {
 }
 
 resource "aws_security_group" "alb" {
-    name = "terraform-example-alb-sg"
+    name_prefix = "terraform-example-alb-sg"
     description = "Allow inbound HTTP traffic and all outbound traffic"
 
     # Allow inbound HTTP requests (Port 80)
@@ -40,6 +40,10 @@ resource "aws_security_group" "alb" {
         to_port = 0
         protocol = "-1"
         cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    lifecycle {
+      create_before_destroy = true
     }
   
 }
